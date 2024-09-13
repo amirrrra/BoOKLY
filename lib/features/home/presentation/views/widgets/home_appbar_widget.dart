@@ -1,5 +1,5 @@
 import 'package:bookly/core/utils/assets_data.dart';
-import 'package:bookly/core/utils/colors_palette.dart';
+import 'package:bookly/core/utils/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,14 +16,14 @@ class HomeAppBarWidget extends StatelessWidget {
         SvgPicture.asset(
           AssetsData.logo,
           colorFilter: const ColorFilter.mode(
-            ColorsPalette.kPrimaryColor,
+            ColorPalette.kPrimaryColor,
             BlendMode.srcIn,
           ),
         ),
         SvgPicture.asset(
           AssetsData.search,
           colorFilter: const ColorFilter.mode(
-            ColorsPalette.kBlack,
+            ColorPalette.kBlack,
             BlendMode.srcIn,
           ),
         ),

@@ -1,4 +1,4 @@
-import 'package:bookly/core/utils/colors_palette.dart';
+import 'package:bookly/core/utils/color_palette.dart';
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/features/splash/presentation/views/widgets/splash_widget.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class SplashView extends StatelessWidget {
             AssetsData.logo,
             height: 55,
             colorFilter: const ColorFilter.mode(
-              ColorsPalette.kPrimaryColor,
+              ColorPalette.kPrimaryColor,
               BlendMode.srcIn,
             ),
           ),
