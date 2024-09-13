@@ -16,18 +16,21 @@ class HomeTabBarWidget extends StatelessWidget {
       const Tab(text: 'Novels'),
     ];
 
-    return DefaultTabController(
-      length: tabs.length,
-      child: TabBar(
-        tabs: tabs,
-        isScrollable: true,
-        tabAlignment: TabAlignment.start,
-        labelPadding: const EdgeInsets.only(right: 25),
-        labelColor: ColorPalette.kBlack,
-        unselectedLabelColor: ColorPalette.kGrey,
-        indicatorColor: ColorPalette.kPrimaryColor,
-        overlayColor: WidgetStateProperty.all(ColorPalette.kTransparent),
-        dividerColor: Colors.transparent,
+    return Padding(
+      padding: const EdgeInsets.only(left: 25),
+      child: DefaultTabController(
+        length: tabs.length,
+        child: TabBar(
+          tabs: tabs,
+          isScrollable: true,
+          tabAlignment: TabAlignment.start,
+          labelPadding: const EdgeInsets.only(right: 25),
+          labelColor: ColorPalette.kBlack,
+          unselectedLabelColor: ColorPalette.kGrey,
+          indicatorColor: ColorPalette.kPrimaryColor,
+          overlayColor: WidgetStateProperty.all(ColorPalette.kTransparent),
+          dividerColor: Colors.transparent,
+        ),
       ),
     );
   }

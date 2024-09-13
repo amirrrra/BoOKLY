@@ -11,56 +11,59 @@ class BookDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    return GestureDetector(
-      onTap: () {},
-      child: Row(
-        children: [
-          SizedBox(
-            height: screenWidth / 3.7,
-            child: const BookCoverWidget(
-              radius: 7,
-              imageUrl: 'https://pbs.twimg.com/media/DTBbTrJX4AA8rJe.jpg',
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: GestureDetector(
+        onTap: () {},
+        child: Row(
+          children: [
+            SizedBox(
+              height: screenWidth / 3.7,
+              child: const BookCoverWidget(
+                radius: 7,
+                imageUrl: 'https://pbs.twimg.com/media/DTBbTrJX4AA8rJe.jpg',
+              ),
             ),
-          ),
-          const SizedBox(width: 30),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: screenWidth * .5,
-                  child: Text(
-                    'Becauase you are Allah',
-                    style: Styles.style19.copyWith(height: 1),
-                    maxLines: 2,
+            const SizedBox(width: 30),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: screenWidth * .5,
+                    child: Text(
+                      'Becauase you are Allah',
+                      style: Styles.style19.copyWith(height: 1),
+                      maxLines: 2,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 5),
-                const Text(
-                  'Ali Gaber',
-                  style: Styles.style14,
-                ),
-                const SizedBox(height: 5),
-                Row(
-                  children: [
-                    const Text(
-                      '19.99',
-                      style: Styles.style16,
-                    ),
-                    Text(
-                      ' €',
-                      style: Styles.style14.copyWith(
-                        color: ColorPalette.kBlack,
+                  const SizedBox(height: 5),
+                  const Text(
+                    'Ali Gaber',
+                    style: Styles.style14,
+                  ),
+                  const SizedBox(height: 5),
+                  Row(
+                    children: [
+                      const Text(
+                        '19.99',
+                        style: Styles.style16,
                       ),
-                    ),
-                    const Spacer(),
-                    const BookRatingWidget(),
-                  ],
-                )
-              ],
-            ),
-          )
-        ],
+                      Text(
+                        ' €',
+                        style: Styles.style14.copyWith(
+                          color: ColorPalette.kBlack,
+                        ),
+                      ),
+                      const Spacer(),
+                      const BookRatingWidget(),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

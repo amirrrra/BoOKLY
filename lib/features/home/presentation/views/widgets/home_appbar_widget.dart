@@ -10,24 +10,27 @@ class HomeAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SvgPicture.asset(
-          AssetsData.logo,
-          colorFilter: const ColorFilter.mode(
-            ColorPalette.kPrimaryColor,
-            BlendMode.srcIn,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SvgPicture.asset(
+            AssetsData.logo,
+            colorFilter: const ColorFilter.mode(
+              ColorPalette.kPrimaryColor,
+              BlendMode.srcIn,
+            ),
           ),
-        ),
-        SvgPicture.asset(
-          AssetsData.search,
-          colorFilter: const ColorFilter.mode(
-            ColorPalette.kBlack,
-            BlendMode.srcIn,
+          SvgPicture.asset(
+            AssetsData.search,
+            colorFilter: const ColorFilter.mode(
+              ColorPalette.kBlack,
+              BlendMode.srcIn,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
