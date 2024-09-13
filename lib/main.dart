@@ -15,8 +15,12 @@ class Bookly extends StatelessWidget {
       routerConfig: Routes.routes,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          textTheme:
-              const TextTheme(bodyMedium: TextStyle(fontFamily: Constants.gilroy))),
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(
+            fontFamily: Constants.gilroy,
+          ),
+        ),
+      ),
     );
   }
 }
