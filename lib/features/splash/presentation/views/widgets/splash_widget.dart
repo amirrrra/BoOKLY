@@ -54,7 +54,7 @@ class _SplashWidgetState extends State<SplashWidget>
     );
 
     animation = Tween<Offset>(
-      begin: const Offset(0, 2),
+      begin: const Offset(0, 3),
       end: Offset.zero,
     ).animate(animationController);
 
