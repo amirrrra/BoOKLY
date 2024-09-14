@@ -14,10 +14,10 @@ class BookDetailsListWidget extends StatelessWidget {
       builder: (context, state) {
         if (state is BookSuccessState) {
           return ListView.builder(
-            itemCount: 8,
             physics: const NeverScrollableScrollPhysics(),
+            itemCount: state.bookModel.items.length,
             itemBuilder: (BuildContext context, int index) {
-              return  Column(
+              return Column(
                 children: [
                   BookDetailsWidget(
                     bookModel: state.bookModel,

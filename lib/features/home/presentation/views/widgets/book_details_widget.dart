@@ -17,6 +17,7 @@ class BookDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
+    final amount = bookModel.items[index].saleInfo?.listPrice?.amount;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -26,9 +27,11 @@ class BookDetailsWidget extends StatelessWidget {
           children: [
             SizedBox(
               height: screenWidth / 3.7,
-              child: const BookCoverWidget(
+              child: BookCoverWidget(
                 radius: 7,
-                imageUrl: 'https://pbs.twimg.com/media/DTBbTrJX4AA8rJe.jpg',
+                imageUrl:
+                    bookModel.items[index].volumeInfo?.imageLinks?.thumbnail ??
+                        '',
               ),
             ),
             const SizedBox(width: 30),
@@ -39,31 +42,35 @@ class BookDetailsWidget extends StatelessWidget {
                   SizedBox(
                     width: screenWidth * .5,
                     child: Text(
-                      'Becauase you are Allah',
+                      bookModel.items[index].volumeInfo?.title ?? '',
                       style: Styles.style19.copyWith(height: 1),
                       maxLines: 2,
                     ),
                   ),
                   const SizedBox(height: 5),
-                  const Text(
-                    'Ali Gaber',
+                  Text(
+                    bookModel.items[index].volumeInfo?.author ?? '',
                     style: Styles.style14,
                   ),
                   const SizedBox(height: 5),
                   Row(
                     children: [
-                      const Text(
-                        '19.99',
+                      Text(
+                        amount == null ? 'Free' : '$amount',
                         style: Styles.style16,
                       ),
-                      Text(
-                        ' €',
-                        style: Styles.style14.copyWith(
-                          color: ColorPalette.kBlack,
+                      if (amount != null)
+                        Text(
+                          ' €',
+                          style: Styles.style14.copyWith(
+                            color: ColorPalette.kBlack,
+                          ),
                         ),
-                      ),
                       const Spacer(),
-                      const BookRatingWidget(),
+                      BookRatingWidget(
+                        bookModel: bookModel,
+                        index: index,
+                      ),
                     ],
                   )
                 ],

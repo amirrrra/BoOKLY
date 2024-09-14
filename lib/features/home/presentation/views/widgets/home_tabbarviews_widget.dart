@@ -8,8 +8,10 @@ class HomeTabbarviewsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBarView(
-      children: HomeTabBarWidgetState().categories
-          .map((title) => const Center(child:  BookDetailsListWidget()))
+      physics: const NeverScrollableScrollPhysics(), 
+      children: HomeTabBarWidgetState()
+          .categories
+          .map((title) => const Center(child: BookDetailsListWidget()))
           .toList(),
     );
   }

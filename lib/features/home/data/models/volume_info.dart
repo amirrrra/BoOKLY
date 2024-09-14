@@ -6,6 +6,8 @@ class VolumeInfo {
   final String? publisher;
   final String? description;
   final String? previewLink;
+  final num? averageRating;
+  final int? ratingsCount;
   final ImageLinks? imageLinks;
 
   VolumeInfo({
@@ -14,6 +16,8 @@ class VolumeInfo {
     required this.publisher,
     required this.description,
     required this.previewLink,
+    required this.averageRating,
+    required this.ratingsCount,
     required this.imageLinks,
   });
 
@@ -24,6 +28,8 @@ class VolumeInfo {
       publisher: json['publisher'],
       description: json['description'],
       previewLink: json['previewLink'],
+      averageRating: json['averageRating'],
+      ratingsCount: json['ratingsCount'],
       imageLinks: json['imageLinks'] == null
           ? null
           : ImageLinks.fromJson(json['imageLinks']),

@@ -1,9 +1,16 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class BookRatingWidget extends StatelessWidget {
-  const BookRatingWidget({super.key});
+  final int index;
+  final BookModel bookModel;
+  const BookRatingWidget({
+    super.key,
+    required this.bookModel,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +23,15 @@ class BookRatingWidget extends StatelessWidget {
         const SizedBox(
           width: 5,
         ),
-         const Text(
-          '4.8',
+        Text(
+          '${bookModel.items[index].volumeInfo?.averageRating ?? '0'}',
           style: Styles.style16,
         ),
         const SizedBox(
           width: 4,
         ),
-        const Text(
-          '(288)',
+        Text(
+          '(${bookModel.items[index].volumeInfo?.ratingsCount ?? '0'})',
           style: Styles.style14,
         ),
       ],
