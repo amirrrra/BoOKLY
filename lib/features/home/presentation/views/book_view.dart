@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/presentation/views/book_bottom_section_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_bottom_section_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_top_section_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -8,11 +8,13 @@ class BookView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        children: [
-          BookTopSectionWidget(),
-          BookBottomSectionWidget()
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            BookTopSectionWidget(),
+            BookBottomSectionWidget()
+          ],
+        ),
       ),
     );
   }

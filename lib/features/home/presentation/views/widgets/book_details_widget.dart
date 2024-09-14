@@ -36,7 +36,7 @@ class BookDetailsWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             BookSubdetailsWidget(
-              title: 'Rating',
+              title: 'Average',
               value: '4.7',
             ),
             BookSubdetailsWidget(
@@ -48,7 +48,7 @@ class BookDetailsWidget extends StatelessWidget {
               value: 'ENG',
             ),
             BookSubdetailsWidget(
-              title: 'reviews',
+              title: 'Ratings',
               value: '255',
             ),
           ],
