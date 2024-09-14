@@ -1,9 +1,11 @@
 import 'package:bookly/core/utils/color_palette.dart';
+import 'package:bookly/core/utils/routes.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_cover_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BookDetailsWidget extends StatelessWidget {
   final int index;
@@ -22,7 +24,9 @@ class BookDetailsWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(Routes.kBook);
+        },
         child: Row(
           children: [
             SizedBox(
