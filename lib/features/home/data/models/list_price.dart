@@ -1,5 +1,5 @@
 class ListPrice {
-  final double? amount;
+  final num? amount;
 
   ListPrice({required this.amount});
 

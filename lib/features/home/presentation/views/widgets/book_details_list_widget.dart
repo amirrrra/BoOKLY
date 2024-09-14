@@ -13,13 +13,17 @@ class BookDetailsListWidget extends StatelessWidget {
     return BlocBuilder<BookCubit, BookState>(
       builder: (context, state) {
         if (state is BookSuccessState) {
-          return SliverList.builder(
+          return ListView.builder(
             itemCount: 8,
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
-              return const Column(
+              return  Column(
                 children: [
-                  BookDetailsWidget(),
-                  SizedBox(height: 20),
+                  BookDetailsWidget(
+                    bookModel: state.bookModel,
+                    index: index,
+                  ),
+                  const SizedBox(height: 20),
                 ],
               );
             },

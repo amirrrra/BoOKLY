@@ -1,11 +1,18 @@
 import 'package:bookly/core/utils/color_palette.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_cover_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsWidget extends StatelessWidget {
-  const BookDetailsWidget({super.key});
+  final int index;
+  final BookModel bookModel;
+  const BookDetailsWidget({
+    super.key,
+    required this.bookModel,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {

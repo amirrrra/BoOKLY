@@ -10,7 +10,7 @@ class HomeRepoImpl extends HomeRepo {
     required String category,
   }) async {
     try {
-      var repoData = await ApiService().get(endpoint: 'q=$category');
+      var repoData = await ApiService().get(endpoint: 'volumes?q=$category');
       BookModel bookModel = BookModel.fromJson(repoData);
 
       return right(bookModel);

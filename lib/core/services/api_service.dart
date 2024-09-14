@@ -5,7 +5,7 @@ class ApiService {
 
   final String _baseUrl = 'https://www.googleapis.com/books/v1/';
 
-  Future<Response> get({
+  Future<Map<String, dynamic>> get({
     required String endpoint,
   }) async {
     var response = await dio.get('$_baseUrl$endpoint');
