@@ -13,6 +13,12 @@ class HomeTabBarWidget extends StatefulWidget {
 }
 
 class HomeTabBarWidgetState extends State<HomeTabBarWidget> {
+  @override
+  void initState() {
+    triggerFetchBooks(0);
+    super.initState();
+  }
+
   final List<String> categories = [
     'Programming',
     'Travel',
@@ -27,15 +33,19 @@ class HomeTabBarWidgetState extends State<HomeTabBarWidget> {
     'Horror',
   ];
 
+  void triggerFetchBooks(int index) {
+    BlocProvider.of<BookCubit>(context).fetchBooks(
+      category: categories[index],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final tabs = categories.map((item) => Tab(text: item)).toList();
-
-    void triggerFetchBooks(int index) {
-      BlocProvider.of<BookCubit>(context).fetchBooks(
-        category: categories[index],
-      );
-    }
+    final tabs = categories
+        .map(
+          (item) => Tab(text: item),
+        )
+        .toList();
 
     return Padding(
       padding: const EdgeInsets.only(left: 25),
