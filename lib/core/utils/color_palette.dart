@@ -6,5 +6,6 @@ abstract class ColorPalette {
   static const kGrey = Colors.grey;
   static const kWhite = Colors.white;
   static const kGrey7 = Color(0xff777777);
+  static const kWhiteE =Color(0xffEDEBE9);
   static const kTransparent = Colors.transparent;
 }

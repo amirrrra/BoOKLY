@@ -3,10 +3,10 @@ import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class BookRatingWidget extends StatelessWidget {
+class HomeRatingWidget extends StatelessWidget {
   final int index;
   final BookModel bookModel;
-  const BookRatingWidget({
+  const HomeRatingWidget({
     super.key,
     required this.bookModel,
     required this.index,

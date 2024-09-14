@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/presentation/views/widgets/book_details_list_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/home_booklist_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/home_tabbar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,7 @@ class HomeTabbarviewsWidget extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(), 
       children: HomeTabBarWidgetState()
           .categories
-          .map((title) => const Center(child: BookDetailsListWidget()))
+          .map((title) => const Center(child: HomeBooklistWidget()))
           .toList(),
     );
   }

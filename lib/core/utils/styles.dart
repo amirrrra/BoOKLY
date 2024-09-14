@@ -20,4 +20,8 @@ class Styles {
     fontSize: 20,
     fontWeight: FontWeight.w500,
   );
+  static const style25 = TextStyle(
+    fontSize: 25,
+    color: ColorPalette.kWhite,
+  );
 }

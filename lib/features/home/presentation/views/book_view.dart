@@ -1,5 +1,5 @@
-import 'package:bookly/core/utils/color_palette.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_appbar_widget.dart';
+import 'package:bookly/features/home/presentation/views/book_bottom_section_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_top_section_widget.dart';
 import 'package:flutter/material.dart';
 
 class BookView extends StatelessWidget {
@@ -8,15 +8,11 @@ class BookView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: ColorPalette.kPrimaryColor,
-      body: SafeArea(
-        child: Column(
-          children: [
-            SizedBox(height: 15),
-            BookAppbarWidget(),
-            
-          ],
-        ),
+      body: Column(
+        children: [
+          BookTopSectionWidget(),
+          BookBottomSectionWidget()
+        ],
       ),
     );
   }
