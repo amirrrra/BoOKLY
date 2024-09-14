@@ -8,25 +8,28 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  DefaultTabController(
+    return DefaultTabController(
       length: HomeTabBarWidgetState().categories.length,
-      child: const Scaffold(
-        body: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                children: [
-                  SizedBox(height: 40),
-                  HomeAppBarWidget(),
-                  SizedBox(height: 20),
-                  HomeTabBarWidget(),
-                ],
-              ),
-            ),
-            SliverFillRemaining(
-              child: HomeTabbarviewsWidget(),
-            )
-          ],
+      child: Scaffold(
+        body: SafeArea(
+          child: NestedScrollView(
+            headerSliverBuilder: (context, isScrolled) {
+              return [
+                const SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 25),
+                      HomeAppBarWidget(),
+                      SizedBox(height: 20),
+                      HomeTabBarWidget(),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+              ];
+            },
+            body: const HomeTabbarviewsWidget(),
+          ),
         ),
       ),
     );
