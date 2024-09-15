@@ -1,5 +1,5 @@
 import 'package:bookly/core/utils/color_palette.dart';
-import 'package:bookly/features/home/presentation/views%20model/cubit/book_cubit.dart';
+import 'package:bookly/features/home/presentation/views%20model/book%20cubit/book_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

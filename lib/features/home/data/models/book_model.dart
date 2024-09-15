@@ -1,15 +1,19 @@
-import 'package:bookly/features/home/data/models/item.dart';
+import 'package:bookly/features/home/data/models/sale_info.dart';
+import 'package:bookly/features/home/data/models/volume_info.dart';
 
 class BookModel {
-  final List<Item> items;
+  final VolumeInfo? volumeInfo;
+  final SaleInfo? saleInfo;
 
-  BookModel({required this.items});
+  BookModel({required this.volumeInfo, required this.saleInfo});
 
   factory BookModel.fromJson(json) {
     return BookModel(
-      items: (json['items'] as List<dynamic>)
-          .map((e) => Item.fromJson(e))
-          .toList(),
+      volumeInfo: json['volumeInfo'] == null
+          ? null
+          : VolumeInfo.fromJson(json['volumeInfo']),
+      saleInfo:
+          json['saleInfo'] == null ? null : SaleInfo.fromJson(json['saleInfo']),
     );
   }
 }

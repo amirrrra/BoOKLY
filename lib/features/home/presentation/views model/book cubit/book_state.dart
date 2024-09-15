@@ -7,7 +7,7 @@ final class BookInitialState extends BookState {}
 final class BookLoadingState extends BookState {}
 
 final class BookSuccessState extends BookState {
-  final BookModel bookModel;
+  final List<BookModel> bookModel;
 
   BookSuccessState({required this.bookModel});
 }

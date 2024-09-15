@@ -8,18 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeBookWidget extends StatelessWidget {
-  final int index;
   final BookModel bookModel;
   const HomeBookWidget({
     super.key,
     required this.bookModel,
-    required this.index,
   });
 
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-    final amount = bookModel.items[index].saleInfo?.listPrice?.amount;
+    final amount = bookModel.saleInfo?.listPrice?.amount;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -34,7 +32,7 @@ class HomeBookWidget extends StatelessWidget {
               child: BookCoverWidget(
                 radius: 7,
                 imageUrl:
-                    bookModel.items[index].volumeInfo?.imageLinks?.thumbnail ??
+                    bookModel.volumeInfo?.imageLinks?.thumbnail ??
                         '',
               ),
             ),
@@ -46,14 +44,14 @@ class HomeBookWidget extends StatelessWidget {
                   SizedBox(
                     width: screenWidth * .5,
                     child: Text(
-                      bookModel.items[index].volumeInfo?.title ?? '',
+                      bookModel.volumeInfo?.title ?? '',
                       style: Styles.style19.copyWith(height: 1),
                       maxLines: 2,
                     ),
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    bookModel.items[index].volumeInfo?.author ?? '',
+                    bookModel.volumeInfo?.author ?? '',
                     style: Styles.style14,
                   ),
                   const SizedBox(height: 5),
@@ -73,7 +71,6 @@ class HomeBookWidget extends StatelessWidget {
                       const Spacer(),
                       HomeRatingWidget(
                         bookModel: bookModel,
-                        index: index,
                       ),
                     ],
                   )

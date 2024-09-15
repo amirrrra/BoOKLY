@@ -4,12 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeRatingWidget extends StatelessWidget {
-  final int index;
   final BookModel bookModel;
   const HomeRatingWidget({
     super.key,
     required this.bookModel,
-    required this.index,
   });
 
   @override
@@ -24,14 +22,14 @@ class HomeRatingWidget extends StatelessWidget {
           width: 5,
         ),
         Text(
-          '${bookModel.items[index].volumeInfo?.averageRating ?? '0'}',
+          '${bookModel.volumeInfo?.averageRating ?? '0'}',
           style: Styles.style16,
         ),
         const SizedBox(
           width: 4,
         ),
         Text(
-          '(${bookModel.items[index].volumeInfo?.ratingsCount ?? '0'})',
+          '(${bookModel.volumeInfo?.ratingsCount ?? '0'})',
           style: Styles.style14,
         ),
       ],

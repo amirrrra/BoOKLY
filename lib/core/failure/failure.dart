@@ -6,10 +6,8 @@ class Failure {
   Failure({required this.errMessage});
 }
 
-class ServerFailure {
-  final String errMessage;
-
-  ServerFailure({required this.errMessage});
+class ServerFailure extends Failure {
+  ServerFailure({required super.errMessage});
 
   factory ServerFailure.fromDioError(DioException dioException) {
     switch (dioException.type) {
