@@ -1,7 +1,6 @@
 import 'package:bookly/core/utils/color_palette.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-
 class BookButtonWidget extends StatelessWidget {
   final String text;
   final double leftRadius;
