@@ -1,11 +1,14 @@
 import 'package:bookly/core/utils/color_palette.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_cover_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_subdetails_widget.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsWidget extends StatelessWidget {
-  const BookDetailsWidget({super.key});
+  final BookModel bookModel;
+
+  const BookDetailsWidget({super.key, required this.bookModel});
 
   @override
   Widget build(BuildContext context) {
@@ -15,41 +18,41 @@ class BookDetailsWidget extends StatelessWidget {
       children: [
         SizedBox(
           height: screenWidth / 1.6,
-          child: const BookCoverWidget(
+          child: BookCoverWidget(
             radius: 16,
-            imageUrl: 'https://pbs.twimg.com/media/DTBbTrJX4AA8rJe.jpg',
+            imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
           ),
         ),
         const SizedBox(height: 25),
-        const Text(
-          'Becauase you are Allah',
+        Text(
+          bookModel.volumeInfo?.title ?? '-',
           style: Styles.style25,
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 10),
         Text(
-          'by Ali Gaber',
+          'by ${bookModel.volumeInfo?.author ?? 'Unknown'}',
           style: Styles.style14.copyWith(color: ColorPalette.kWhiteE),
         ),
         const SizedBox(height: 25),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             BookSubdetailsWidget(
               title: 'Average',
-              value: '4.7',
+              value: bookModel.volumeInfo?.averageRating.toString() ?? '0',
             ),
             BookSubdetailsWidget(
               title: 'Pages',
-              value: '455',
+              value: bookModel.volumeInfo?.pageCount.toString() ?? '0',
             ),
             BookSubdetailsWidget(
               title: 'Language',
-              value: 'ENG',
+              value: bookModel.volumeInfo?.language ?? '-',
             ),
             BookSubdetailsWidget(
               title: 'Ratings',
-              value: '255',
+              value: '(${bookModel.volumeInfo?.ratingsCount ?? '0'})',
             ),
           ],
         )

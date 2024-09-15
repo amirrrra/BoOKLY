@@ -23,7 +23,7 @@ class HomeBookWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).push(Routes.kBook);
+          GoRouter.of(context).push(Routes.kBook, extra: bookModel);
         },
         child: Row(
           children: [
@@ -31,9 +31,7 @@ class HomeBookWidget extends StatelessWidget {
               height: screenWidth / 3.7,
               child: BookCoverWidget(
                 radius: 7,
-                imageUrl:
-                    bookModel.volumeInfo?.imageLinks?.thumbnail ??
-                        '',
+                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
               ),
             ),
             const SizedBox(width: 30),
