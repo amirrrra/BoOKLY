@@ -31,6 +31,7 @@ class _BookViewState extends State<BookView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Stack(
           alignment: Alignment.center,
           children: [

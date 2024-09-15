@@ -25,57 +25,60 @@ class HomeBookWidget extends StatelessWidget {
         onTap: () {
           GoRouter.of(context).push(Routes.kBook, extra: bookModel);
         },
-        child: Row(
-          children: [
-            SizedBox(
-              height: screenWidth / 3.7,
-              child: BookCoverWidget(
-                radius: 7,
-                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
+        child: Container(
+          color: Colors.transparent, //container color detect taps
+          child: Row(
+            children: [
+              SizedBox(
+                height: screenWidth / 3.7,
+                child: BookCoverWidget(
+                  radius: 7,
+                  imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
+                ),
               ),
-            ),
-            const SizedBox(width: 30),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: screenWidth * .5,
-                    child: Text(
-                      bookModel.volumeInfo?.title ?? '',
-                      style: Styles.style19.copyWith(height: 1),
-                      maxLines: 2,
+              const SizedBox(width: 30),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: screenWidth * .5,
+                      child: Text(
+                        bookModel.volumeInfo?.title ?? '',
+                        style: Styles.style19.copyWith(height: 1),
+                        maxLines: 2,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    bookModel.volumeInfo?.author ?? '',
-                    style: Styles.style14,
-                  ),
-                  const SizedBox(height: 5),
-                  Row(
-                    children: [
-                      Text(
-                        amount == null ? 'Free' : '$amount',
-                        style: Styles.style16,
-                      ),
-                      if (amount != null)
+                    const SizedBox(height: 5),
+                    Text(
+                      bookModel.volumeInfo?.author ?? '',
+                      style: Styles.style14,
+                    ),
+                    const SizedBox(height: 5),
+                    Row(
+                      children: [
                         Text(
-                          ' €',
-                          style: Styles.style14.copyWith(
-                            color: ColorPalette.kBlack,
-                          ),
+                          amount == null ? 'Free' : '$amount',
+                          style: Styles.style16,
                         ),
-                      const Spacer(),
-                      HomeRatingWidget(
-                        bookModel: bookModel,
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
+                        if (amount != null)
+                          Text(
+                            ' €',
+                            style: Styles.style14.copyWith(
+                              color: ColorPalette.kBlack,
+                            ),
+                          ),
+                        const Spacer(),
+                        HomeRatingWidget(
+                          bookModel: bookModel,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
