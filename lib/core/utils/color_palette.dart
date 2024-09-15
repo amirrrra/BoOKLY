@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class ColorPalette {
-  static const kPrimaryColor = Color(0xffD39A56);
+  static const kPrimaryColor = Color(0xffA67B5B);
   static const kBabyBlack = Color(0xff26252E);
   static const kBlack = Colors.black;
   static const kGrey = Colors.grey;
@@ -11,4 +11,5 @@ abstract class ColorPalette {
   static const kWhiteE = Color(0xffEDEBE9);
   static const kTransparent = Colors.transparent;
   static const kGreyE8 = Color(0xffE8E8E8);
+  static const kAmber = Colors.amber;
 }

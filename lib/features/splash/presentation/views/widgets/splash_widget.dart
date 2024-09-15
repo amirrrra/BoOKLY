@@ -64,7 +64,7 @@ class _SplashWidgetState extends State<SplashWidget>
   void toHome() {
     Future.delayed(
       Constants.durationTransition,
-      () => GoRouter.of(context).push(Routes.kHome),
+      () => GoRouter.of(context).pushReplacement(Routes.kHome),
     );
   }
 }
