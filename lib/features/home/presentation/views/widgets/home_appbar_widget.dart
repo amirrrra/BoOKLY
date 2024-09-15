@@ -1,12 +1,12 @@
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/color_palette.dart';
+import 'package:bookly/core/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeAppBarWidget extends StatelessWidget {
-  const HomeAppBarWidget({
-    super.key,
-  });
+  const HomeAppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,9 @@ class HomeAppBarWidget extends StatelessWidget {
               BlendMode.srcIn,
             ),
           ),
-          SvgPicture.asset(
-            AssetsData.search,
-            colorFilter: const ColorFilter.mode(
-              ColorPalette.kBlack,
-              BlendMode.srcIn,
-            ),
+          GestureDetector(
+            onTap: () => GoRouter.of(context).push(Routes.kSearch),
+            child: SvgPicture.asset(AssetsData.search),
           ),
         ],
       ),
