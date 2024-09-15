@@ -23,14 +23,13 @@ class HomeTabBarWidgetState extends State<HomeTabBarWidget> {
     'Programming',
     'Travel',
     'Sports',
-    'Cooking',
+    'Investments',
     'Novels',
     'Math',
     'Hobbies',
     'Computers',
     'Teen',
     'Imaginary',
-    'Horror',
   ];
 
   void triggerFetchBooks(int index) {

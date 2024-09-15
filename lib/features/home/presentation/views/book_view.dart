@@ -1,4 +1,5 @@
 import 'package:bookly/features/home/presentation/views/widgets/book_bottom_section_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_overlay_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_top_section_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -9,10 +10,19 @@ class BookView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SingleChildScrollView(
-        child: Column(
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            BookTopSectionWidget(),
-            BookBottomSectionWidget()
+            Column(
+              children: [
+                BookTopSectionWidget(),
+                BookBottomSectionWidget(),
+              ],
+            ),
+            Positioned(
+              top: 580 - 25,
+              child: BookOverlayWidget(),
+            )
           ],
         ),
       ),

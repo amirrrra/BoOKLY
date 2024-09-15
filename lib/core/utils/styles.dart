@@ -11,14 +11,15 @@ class Styles {
   );
   static const style16 = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+  );
+  static const style17 = TextStyle(
+    fontSize: 17,
   );
   static const style19 = TextStyle(
     fontSize: 19,
   );
   static const style20 = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.w500,
   );
   static const style25 = TextStyle(
     fontSize: 25,

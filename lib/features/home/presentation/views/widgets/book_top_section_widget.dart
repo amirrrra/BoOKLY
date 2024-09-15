@@ -9,6 +9,7 @@ class BookTopSectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 580,
       color: ColorPalette.kPrimaryColor,
       child: const SafeArea(
         child: Column(
@@ -17,7 +18,7 @@ class BookTopSectionWidget extends StatelessWidget {
             BookAppbarWidget(),
             SizedBox(height: 30),
             BookDetailsWidget(),
-            SizedBox(height: 60),
+            SizedBox(height: 50),
           ],
         ),
       ),
