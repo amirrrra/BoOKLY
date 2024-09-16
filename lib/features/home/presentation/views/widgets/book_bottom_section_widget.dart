@@ -1,30 +1,33 @@
-import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/data/models/book_model.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_subinfo_widget.dart';
 import 'package:flutter/material.dart';
 
 class BookBottomSectionWidget extends StatelessWidget {
-    final BookModel bookModel;
+  final BookModel bookModel;
 
   const BookBottomSectionWidget({super.key, required this.bookModel});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+
         children: [
           const SizedBox(height: 50),
-          const Text(
-            'Overview',
-            style: Styles.style20,
+          BookSubinfoWidget(
+            title: 'Overview',
+            value: bookModel.volumeInfo?.description ?? '...',
           ),
-          const SizedBox(height: 10),
-          Text(
-            bookModel.volumeInfo?.description??'..',
-            style: Styles.style14,
+          BookSubinfoWidget(
+            title: 'Publisher',
+            value: bookModel.volumeInfo?.publisher ?? '...',
           ),
-          const SizedBox(height: 20),
+          BookSubinfoWidget(
+            title: 'Language',
+            value: bookModel.volumeInfo?.language ?? '...',
+          ),
         ],
       ),
     );

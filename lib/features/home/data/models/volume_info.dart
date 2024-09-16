@@ -5,6 +5,7 @@ class VolumeInfo {
   final String? author;
   final String? publisher;
   final String? description;
+  final String? publishedDate;
   final String? previewLink;
   final String? language;
   final num? averageRating;
@@ -17,6 +18,7 @@ class VolumeInfo {
     required this.author,
     required this.publisher,
     required this.description,
+    required this.publishedDate,
     required this.previewLink,
     required this.language,
     required this.averageRating,
@@ -31,6 +33,7 @@ class VolumeInfo {
       author: json['authors'][0],
       publisher: json['publisher'],
       description: json['description'],
+      publishedDate: json['publishedDate'],
       previewLink: json['previewLink'],
       language: json['language'],
       averageRating: json['averageRating'],

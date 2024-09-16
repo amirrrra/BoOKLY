@@ -13,7 +13,7 @@ class SearchTextfieldWidget extends StatelessWidget {
     return SizedBox(
       height: 35,
       child: TextFormField(
-        onFieldSubmitted: (query) {
+        onChanged: (query) {
           BlocProvider.of<SearchCubit>(context).fetchRelevantBooks(
             category: query,
           );

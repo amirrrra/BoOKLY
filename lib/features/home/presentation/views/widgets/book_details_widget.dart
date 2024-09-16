@@ -13,7 +13,8 @@ class BookDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-
+    var released = bookModel.volumeInfo?.publishedDate;
+    
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
@@ -22,7 +23,7 @@ class BookDetailsWidget extends StatelessWidget {
             height: screenWidth / 1.6,
             child: BookCoverWidget(
               radius: 16,
-              imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
+              imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? 'http://Unknown',
             ),
           ),
           const SizedBox(height: 25),
@@ -50,8 +51,10 @@ class BookDetailsWidget extends StatelessWidget {
                 value: '${bookModel.volumeInfo?.pageCount ?? '0'}',
               ),
               BookSubdetailsWidget(
-                title: 'Language',
-                value: bookModel.volumeInfo?.language ?? '-',
+                title: 'Released',
+                value: released != null && released.length >= 4
+                    ? released.substring(0, 4)
+                    : '-',
               ),
               BookSubdetailsWidget(
                 title: 'Ratings',

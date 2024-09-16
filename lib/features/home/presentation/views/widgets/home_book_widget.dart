@@ -1,4 +1,3 @@
-import 'package:bookly/core/utils/color_palette.dart';
 import 'package:bookly/core/utils/routes.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/data/models/book_model.dart';
@@ -17,7 +16,6 @@ class HomeBookWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-    final amount = bookModel.saleInfo?.listPrice?.amount;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -50,25 +48,16 @@ class HomeBookWidget extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    Text(
-                      bookModel.volumeInfo?.author ?? '',
-                      style: Styles.style14,
-                    ),
-                    const SizedBox(height: 5),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          amount == null ? 'Free' : '$amount',
-                          style: Styles.style16,
-                        ),
-                        if (amount != null)
-                          Text(
-                            ' €',
-                            style: Styles.style14.copyWith(
-                              color: ColorPalette.kBlack,
-                            ),
+                        Expanded(
+                          child: Text(
+                            bookModel.volumeInfo?.author ?? '',
+                            style: Styles.style14,
                           ),
-                        const Spacer(),
+                        ),
+                        const SizedBox(width: 5),
                         HomeRatingWidget(
                           bookModel: bookModel,
                         ),

@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:flutter/material.dart';
@@ -15,22 +16,11 @@ class HomeRatingWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SvgPicture.asset(
-          'assets/images/star.svg',
-        ),
-        const SizedBox(
-          width: 5,
-        ),
+        SvgPicture.asset(AssetsData.star),
+        const SizedBox(width: 5),
         Text(
           '${bookModel.volumeInfo?.averageRating ?? '0'}',
           style: Styles.style16,
-        ),
-        const SizedBox(
-          width: 4,
-        ),
-        Text(
-          '(${bookModel.volumeInfo?.ratingsCount ?? '0'})',
-          style: Styles.style14,
         ),
       ],
     );

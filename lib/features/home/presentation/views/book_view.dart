@@ -1,7 +1,7 @@
 import 'package:bookly/core/utils/color_palette.dart';
 import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_bottom_section_widget.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_overlay_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_button_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_top_section_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +36,7 @@ class _BookViewState extends State<BookView> {
           alignment: Alignment.center,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   key: _globalKey,
@@ -48,7 +49,7 @@ class _BookViewState extends State<BookView> {
             if (sectionHeight > 0)
               Positioned(
                 top: sectionHeight - 25,
-                child: BookOverlayWidget(bookModel: widget.bookModel),
+                child: BookButtonWidget(bookModel: widget.bookModel),
               )
           ],
         ),
