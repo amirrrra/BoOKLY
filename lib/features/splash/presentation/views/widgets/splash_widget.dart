@@ -33,17 +33,18 @@ class _SplashWidgetState extends State<SplashWidget>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      builder: (context, _) {
-        return SlideTransition(
-          position: animation,
-           child: const Text(
+      // child will be rebuilt once during the animation
+      child: const Text(
         'Enjoy Books!',
         textAlign: TextAlign.center,
         style: Styles.style20,
       ),
+      builder: (context, child) {
+        return SlideTransition(
+          position: animation,
+          child:child,
         );
       },
-     
     );
   }
 
